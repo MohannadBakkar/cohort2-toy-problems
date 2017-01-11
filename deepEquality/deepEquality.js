@@ -14,5 +14,28 @@
 
   var deepEquals = function(obj1, obj2){
     return JSON.stringify(obj1) === JSON.stringify(obj2)
-
+    // seconed way to solve it
+    var result = true
+    var keysObj1 = Object.keys(obj1)
+    var keysObj2 = Object.keys(obj2)
+    var valObj1 = Object.values(obj1)
+    var valObj2 = Object.values(obj2)
+    for (var i = 0; i < keysObj1.length; i++) {
+      if(keysObj1[i] === keysObj2[i])
+        result = true
+    }else{
+      result = false
+    }
+    if(result === false){
+      return false
+    }else{
+      for (var i = 0; i < valObj1.length; i++) {
+        if(typeof valObj1[i] !== "object" && valObj2[i] !=="object" && valObj1[i] === valObj2[i]){
+          result = true
+        }else{
+          deepEquals(valObj1,valObj2)
+        }
+      }
+    }
+    return result
   }
