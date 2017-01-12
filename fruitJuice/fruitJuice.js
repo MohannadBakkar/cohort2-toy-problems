@@ -54,6 +54,7 @@ Jar.prototype.getTotalAmount = function(){
 	}
 	return total
 }
+// time complexity is o(n)
 
 /*
 These are some tests:
@@ -66,4 +67,3 @@ jar.add(200, 'banana');
 jar.getTotalAmount();// should be 400
 jar.getConcentration('apple'); //should be 0.5 or 50%
 jar.getConcentration('banana'); //should be 0.5 or 50%
-*/
