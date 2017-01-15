@@ -11,7 +11,25 @@ flatten(1, [2, 3], 4, 5, [6, [7]]) // returns [1, 2, 3, 4, 5, 6, 7]
 flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 4, 'c']
 
 */
+var arr = []
+function searchingForArray(array){
+	for (var i = 0; i < array.length; i++) {
+		if( typeof array[i] !== "object"){
+			arr.push(array[i])
+		}else{
+			searchingForArray(array[i])
+		}
+	}
+}
 
 function flatten(){
-
+	var x = Array.from(arguments)
+	for (var i = 0; i < x.length; i++) {
+		if(typeof x[i] === "number" ||typeof x[i] === "string" ||  x[i] === null ){
+			arr.push(x[i])
+		}else{
+			searchingForArray(x[i])
+		}
+	}
+	return arr 
 }
