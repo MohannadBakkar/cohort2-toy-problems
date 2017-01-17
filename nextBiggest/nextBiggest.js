@@ -34,8 +34,22 @@ rotate(data, 11)    // => [5, 1, 2, 3, 4]
 rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
-function rotate(array, steps){
+var data = [1, 2, 3, 4, 5];
 
+function rotate(array, steps){
+	if(steps<0){
+		steps = steps * -1 
+		for (var i = 0; i < steps; i++) {
+			var added = array.shift()
+			array.push(added)		
+		}	
+	}else{
+		for (var i = 0; i < steps; i++) {
+			var added = array.pop()
+			array.unshift(added)		
+		}
+	}
+	return array
 }
 
 /*
@@ -56,5 +70,16 @@ nextBigger(531)==-1
 */
 
 function nextBigger(num){
-
+	var arr = num.toString().split("")
+	var max = []
+	while(arr.length>0){
+		var biggest = Math.max(... arr)
+		var index = arr.indexOf(biggest)
+		max.push(biggest)
+		arr.splice(index,1)
+	}
+	if(Number(max.join(''))===num){
+		return -1
+	}
+	return Number(max.join(''))
 }
