@@ -5,5 +5,11 @@ Hint the answer is 1366.
 */
 
 var powerOfTwo = function(num){
-
+	var x=Math.pow(2,num).toString()
+	var result = 0
+	var arr = x.split('')
+	for (var i = 0; i < arr.length; i++) {
+		result += Number(arr[i])
+	}
+	return result
 }
