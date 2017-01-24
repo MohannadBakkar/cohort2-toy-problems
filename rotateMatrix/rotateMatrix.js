@@ -28,7 +28,7 @@
  *  ['E','A',6,2],
  *  ['F','B',7,3],
  *  ['G','C',8,4]
- * ]
+ * ].3
  * rotatedMatrix[0][0]; // 'D'
  * rotatedMatrix[3][2]; // 8
  *
@@ -37,14 +37,45 @@
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
 
+ var a = [
+ [1,2,3,4],
+ [5,6,7,8],
+ [9,'A','B','C'],
+ ['D','E','F','G']
+ ];
+ 
+ var aa = [
+ 		   [1,2,3,4],
+           [5,6,7,8],
+ 		   [9,'A','B','C']
+ 		  ];
+ 
+
  var rotateMatrix =function (matrix) {
+
  	var arr = []
- 	for (var i = 0; i < matrix.length; i++) {
- 		var testArr = []
- 		for (var j = 0; j < matrix[i].length; j++) {
- 			testArr.unshift(matrix[j][i])
+
+ 	if(matrix.length !== matrix[0]){
+ 		for (var i = 0; i < matrix.length; i++) {
+ 			var testArr = []
+ 			for (var j = 0; j < matrix[i].length; j++) {
+ 				if(i === undefined){
+ 					break;
+ 				}
+ 				testArr.unshift(matrix[j][i])
+ 			}
+ 			arr.push(testArr)
  		}
- 		arr.push(testArr)
- 	}	
+ 		return arr
+ 	}else{
+ 		for (var i = 0; i < matrix.length; i++) {
+ 			var testArr = []
+ 			for (var j = 0; j < matrix[i].length; j++) {
+ 				testArr.unshift(matrix[j][i])
+ 			}
+ 			arr.push(testArr)
+ 		}	
+ 	}
  	return arr;
  }
+
