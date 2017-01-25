@@ -11,5 +11,10 @@
  */
 
 var spiralTraversal = function(matrix){
-
+	var arr = []
+	var j = 0
+	for (var i = 0; i < matrix.length; i++) {
+		arr = arr.concat(matrix[i])
+	}
+	return arr
 };
