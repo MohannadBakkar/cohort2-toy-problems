@@ -10,7 +10,18 @@
  * console.log(index); // 4
  */
 
-var binarySearch = function (array, target) {
-  
-};
+ var binarySearch = function (array, target) {
+ 	var middle = Math.floor(array.length / 2) 
+ 	if(target === array[middle] ){
+ 		return middle
+ 	}else if(target < array[middle]){
+ 		var arr = []
+ 		arr = array.slice(0,middle)
+ 		binarySearch(arr,target)
+ 	}else{
+ 		var arr = []
+ 		arr = array.slice(middle+1 , array.length)
+ 		binarySearch(arr,target)
+ 	}	
+ };
 
