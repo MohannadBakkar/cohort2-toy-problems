@@ -15,13 +15,33 @@
  *
  * See http://en.wikipedia.org/wiki/Subset for more on the definition of a
  * subset.
-*/
+ */
 
 
 /*
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
-*/
+ */
 
-Array.prototype.isSubsetOf = function (arr) {
+ Array.prototype.isSubsetOf = function (arr) {
+ 	console.log(this)
+ 	var result = false;
+ 	for (var i = 0; i < this.length; i++) {
+ 		if(!Array.isArray(arr[i])){
 
-}
+ 			if(arr.includes(this[i])){
+ 				result = true;
+ 			}else{
+ 				result = false;
+ 			}
+ 		}else{
+ 			for(var key in arr[i]){
+ 				if(arr[i][key] === this[i]){
+ 					result = true;
+ 				}else{
+ 					result = false;
+ 				}
+ 			}
+ 		}
+ 	}
+ 	return result;
+ }
