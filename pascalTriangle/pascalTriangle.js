@@ -25,6 +25,10 @@ buildTriangle(3);// should output [[1],[1,1],[1,2,1]];
 */
 
 var buildTriangle = function(numOfRows){
-	
+	var arr = [];
+	for (var i = 0; i < numOfRows; i++) {
+		arr.push(Math.pow(11,i).toString().split(''))
+	}
+	return arr;
 }
 		
