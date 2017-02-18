@@ -26,4 +26,25 @@ var translateRomanNumeral = function(romanNumeral){
 	  D: 500,
 	  M: 1000
 	};
+	var obj = DIGIT_VALUES
+	var arr = romanNumeral.split('')
+	var total = 0
+	// var elems = Object.values(obj)
+	var num;
+	// for(var key in obj){
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		if(arr[i] === key){
+	// 			total += obj[key]
+	// 			num = obj[key]
+	// 		}
+	// 	}
+	// }
+	// return total
+	var arrKey = Object.keys(obj)
+	var arrVal = Object.values(obj)
+	for (var i = 0; i < arr.length; i++) {
+		if(arrKey.indexOf(arr[i]) < arrKey.indexOf(arr[i+1])){
+			total = 
+		}
+	}
 }
