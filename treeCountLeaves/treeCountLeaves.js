@@ -34,12 +34,31 @@
 var Tree = function(value){
   this.value = value;
   this.children = [];
+  this.count=0
+  this.count1=0
 };
 
 
 
 
 Tree.prototype.countLeaves = function () {
+  // if(this.children.length === 0 ){
+  //   this.count++
+  //   return this.count
+  // }else{
+  //   for (var i = 0; i < this.children.length; i++) {
+  //     if(typeof this.children[i] === "object"){
+  //       if(this.children[i].children.length !== 0 ){
+  //       countLeaves()
+  //      }else{
+  //       this.count++
+  //      }
+  //     }else{
+  //       this.count++
+  //     }
+  //   }
+  // }
+  return this.count1
 }
 
 /**
@@ -51,7 +70,8 @@ Tree.prototype.countLeaves = function () {
   * (wrap values in Tree nodes if they're not already)
   */
 Tree.prototype.addChild = function(child){
-  
+this.count1++
+    this.children.push(new Tree(child)) 
 };
 
 /**
@@ -66,5 +86,8 @@ Tree.prototype.isDescendant = function(child){
   * remove an immediate child
   */
 Tree.prototype.removeChild = function(child){
-  
+  if(true){
+    // this if statment mean if we found the child we will delete it 
+    this.count1--
+  }
 };
