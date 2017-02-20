@@ -15,7 +15,17 @@ abc(); // should return 'a' again on this fourth call
 
 
 function makeLooper(string){
-
+	var index = 0
+	return function(){
+		var str = ''
+		if(index !== string.length){
+			str = string[index]
+			index++
+		}else if(index === string.length){
+			index = 0
+		}
+		return str
+	}
 };
 
 
@@ -50,9 +60,15 @@ For example:
 pyramid(750); // should === 12
 pyramid(1666); // should === 16
 */
-
 function pyramid(cans){
-	
+	var num = 0
+	var	counter = 0
+	while(cans > 0){
+		counter ++
+		num = counter * counter
+		cans = cans - num
+	}
+	return counter-1
 };
 
 
